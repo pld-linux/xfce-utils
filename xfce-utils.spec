@@ -7,6 +7,7 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	0f8370292674a5be7e66da952355ec4e
+Patch0:		%{name}-po_pl.patch
 URL:		http://www.xfce.org/
 BuildRequires:	intltool
 BuildRequires:	libxfce4mcs-devel >= %{version}
@@ -26,6 +27,7 @@ xfce-utils zawiera narzêdzia dla ¶rodowiska XFce.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 rm -f missing
@@ -42,6 +44,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
+rm -rf $RPM_BUILD_ROOT%{_datadir}/xfce4/doc/fr
+rm -f $RPM_BUILD_ROOT%{_datadir}/xfce4/COPYING.{html,vi}
 
 %find_lang %{name}
 
@@ -55,18 +59,27 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/xinitrc
 %{_datadir}/xfce4/AUTHORS
+%lang(az) %{_datadir}/xfce4/AUTHORS.az
 %lang(ca) %{_datadir}/xfce4/AUTHORS.ca
 %lang(de) %{_datadir}/xfce4/AUTHORS.de
+%lang(fr) %{_datadir}/xfce4/AUTHORS.fr
+%lang(vi) %{_datadir}/xfce4/AUTHORS.vi
 %{_datadir}/xfce4/AUTHORS.html
+%lang(az) %{_datadir}/xfce4/AUTHORS.html.az
 %lang(ca) %{_datadir}/xfce4/AUTHORS.html.ca
 %lang(de) %{_datadir}/xfce4/AUTHORS.html.de
+%lang(fr) %{_datadir}/xfce4/AUTHORS.html.fr
 %{_datadir}/xfce4/BSD
 %{_datadir}/xfce4/COPYING
 %{_datadir}/xfce4/GPL
 %{_datadir}/xfce4/INFO
 %{_datadir}/xfce4/INFO.html
+%lang(ca) %{_datadir}/xfce4/INFO.ca
+%lang(fr) %{_datadir}/xfce4/INFO.fr
+%lang(vi) %{_datadir}/xfce4/INFO.vi
 %lang(ca) %{_datadir}/xfce4/INFO.html.ca
 %lang(de) %{_datadir}/xfce4/INFO.html.de
+%lang(fr) %{_datadir}/xfce4/INFO.html.fr
 %{_datadir}/xfce4/LGPL
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/xfce.css
