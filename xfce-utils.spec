@@ -124,9 +124,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/xfce.css
-%{_datadir}/xfce4/doc/C/*
-%lang(fr) %{_datadir}/xfce4/doc/fr/*
-%lang(it) %{_datadir}/xfce4/doc/it/*
+%{_datadir}/xfce4/doc/C/*.html
+%{_datadir}/xfce4/doc/C/images/*.png
+%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
+%lang(fr) %{_datadir}/xfce4/doc/fr/images/*.png
+%lang(it) %{_datadir}/xfce4/doc/it/*.html
+%lang(it) %{_datadir}/xfce4/doc/it/images/*.png
 %{_iconsdir}/hicolor/*/*/*
 
 %{_datadir}/apps/switchdesk/Xclients.xfce4
