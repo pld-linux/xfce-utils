@@ -10,11 +10,11 @@ Source0:	http://www.xfce.org/archive/xfce4-rc3/src/%{name}-%{version}.tar.gz
 Source1:	XFce4.desktop
 URL:		http://www.xfce.org/
 BuildRequires:	intltool
-BuildRequires:	libxfce4mcs-devel >= 3.99.2
+BuildRequires:	libxfce4mcs-devel >= 3.99.3
 BuildRequires:	libxfcegui4-devel >= 3.99.3
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	xfce-mcs-manager-devel >= 3.99.2
-Requires:	libxfce4mcs >= 3.99.2
+BuildRequires:	xfce-mcs-manager-devel >= 3.99.3
+Requires:	libxfce4mcs >= 3.99.3
 Requires:	libxfcegui4 >= 3.99.3
 Requires:	xfce-mcs-manager >= 3.99.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
