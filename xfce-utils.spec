@@ -1,15 +1,13 @@
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
-Version:	4.0.2
+Version:	4.0.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	0f8370292674a5be7e66da952355ec4e
-Patch0:		%{name}-po_pl.patch
+# Source0-md5:	b0cd19f9f06885a878730fa78afef415
 URL:		http://www.xfce.org/
-BuildRequires:	intltool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
@@ -27,12 +25,8 @@ xfce-utils zawiera narzêdzia dla ¶rodowiska XFce.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-rm -f missing
-glib-gettextize --copy --force
-intltoolize --copy --force
 %configure \
 	--enable-gdm
 %{__make}
