@@ -1,12 +1,12 @@
 Summary: 	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name: 		xfce-utils
-Version: 	3.90.0
+Version: 	3.91.0
 Release: 	1
 License:	GPL
 Group: 		X11/Applications
 Source0: 	http://dl.sourceforge.net/xfce/%{name}-%{version}.tar.gz
-# Source0-md5:	e82ae701185d0b7365bbe943fe6af855
+# Source0-md5:	076d54feeecbfffa53dc96340536b84c
 URL: 		http://www.xfce.org/
 BuildRequires:	intltool
 BuildRequires:	libxfce4mcs-devel >= 0.0.3
