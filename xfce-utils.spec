@@ -1,13 +1,13 @@
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
-Version:	4.0.5
-Release:	2
+Version:	4.0.6
+Release:	1
 License:	GPL
 Group:		X11/Applications
 #Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	105e906b6f21a9360cc9a898dfb28604
+# Source0-md5:	d42a01aa03a9eafb9bc2cc546d988b4b
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
@@ -17,9 +17,11 @@ BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
+BuildRequires:	startup-notification-devel
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
+Requires:	startup-notification
 Requires:	xfce-mcs-manager >= %{version}
 Conflicts:	xfce4-session < 0.1.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
