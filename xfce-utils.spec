@@ -20,7 +20,7 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= 4.1.3
 BuildRequires:	libxfcegui4-devel >= 4.1.27
-BuildRequires:	pkgconfig >= 0.9.0
+BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= 4.1.3
 Requires:	gxmessage
 Requires:	libxfce4mcs >= 4.1.3
