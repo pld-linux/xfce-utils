@@ -1,16 +1,20 @@
+#
+%define		snap 20040616
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
-Version:	4.0.5
-Release:	1
+Version:	4.1.0
+Release:	0.%{snap}.1
 License:	GPL
 Group:		X11/Applications
-#Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
-Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	105e906b6f21a9360cc9a898dfb28604
+Source0:	%{name}-snap-%{snap}.tar.bz2
+# Source0-md5:	041708076ca9e08cef6f9d8139c3ca89
 Source1:	xfce4-xsession.desktop
 URL:		http://www.xfce.org/
+BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gtkhtml-devel
+BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
@@ -28,12 +32,17 @@ xfce-utils contains utilities for the XFce Desktop Environment.
 xfce-utils zawiera narzêdzia dla ¶rodowiska XFce.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 
 %build
-cp -f /usr/share/automake/config.sub .
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoheader}
+%{__automake}
+%{__autoconf}
 %configure \
-	--enable-gdm
+	--enable-gdm \
+	--enable-gtkhtml
 %{__make}
 
 %install
@@ -43,8 +52,10 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
-rm -rf $RPM_BUILD_ROOT%{_datadir}/xfce4/doc/fr
-rm -f $RPM_BUILD_ROOT%{_datadir}/xfce4/COPYING.{html,vi}
+rm -f $RPM_BUILD_ROOT%{_datadir}/xfce4/COPYING*
+rm -f $RPM_BUILD_ROOT%{_datadir}/xfce4/{BSD,LGPL,GPL}*
+rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/X11/{dm,gdm,wmsession.d}
+rm -f $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce.desktop
 
 install -d $RPM_BUILD_ROOT%{_datadir}/xsessions
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce4.desktop
@@ -60,12 +71,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/xinitrc
+
+%{_desktopdir}/xfce-taskbar-settings.desktop
+
 %{_datadir}/xfce4/AUTHORS
 %lang(az) %{_datadir}/xfce4/AUTHORS.az
 %lang(ca) %{_datadir}/xfce4/AUTHORS.ca
 %lang(de) %{_datadir}/xfce4/AUTHORS.de
 %lang(es) %{_datadir}/xfce4/AUTHORS.es
 %lang(fr) %{_datadir}/xfce4/AUTHORS.fr
+%lang(it) %{_datadir}/xfce4/AUTHORS.it
+%lang(lt) %{_datadir}/xfce4/AUTHORS.lt
 %lang(vi) %{_datadir}/xfce4/AUTHORS.vi
 %{_datadir}/xfce4/AUTHORS.html
 %lang(az) %{_datadir}/xfce4/AUTHORS.html.az
@@ -73,22 +89,23 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_datadir}/xfce4/AUTHORS.html.de
 %lang(es) %{_datadir}/xfce4/AUTHORS.html.es
 %lang(fr) %{_datadir}/xfce4/AUTHORS.html.fr
-%{_datadir}/xfce4/BSD
-%{_datadir}/xfce4/COPYING
-%{_datadir}/xfce4/GPL
+%lang(it) %{_datadir}/xfce4/AUTHORS.html.it
 %{_datadir}/xfce4/INFO
 %{_datadir}/xfce4/INFO.html
 %lang(ca) %{_datadir}/xfce4/INFO.ca
+%lang(es) %{_datadir}/xfce4/INFO.es
 %lang(fr) %{_datadir}/xfce4/INFO.fr
+%lang(it) %{_datadir}/xfce4/INFO.it
 %lang(vi) %{_datadir}/xfce4/INFO.vi
 %lang(ca) %{_datadir}/xfce4/INFO.html.ca
 %lang(de) %{_datadir}/xfce4/INFO.html.de
+%lang(es) %{_datadir}/xfce4/INFO.html.es
 %lang(fr) %{_datadir}/xfce4/INFO.html.fr
-%{_datadir}/xfce4/LGPL
+%lang(it) %{_datadir}/xfce4/INFO.html.it
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/xfce.css
-%{_datadir}/xfce4/doc/C/*.html
-%{_datadir}/xfce4/doc/C/images/*
+%{_datadir}/xfce4/doc/C
+%lang(fr) %{_datadir}/xfce4/doc/fr
 
 %{_datadir}/apps/switchdesk/Xclients.xfce4
 %{_datadir}/xsessions/xfce4.desktop
