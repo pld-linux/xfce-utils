@@ -5,8 +5,8 @@ Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska Xfce
 Name:		xfce-utils
 Version:	4.1.99.3
-Release:	1
-License:	GPL
+Release:	2
+License:	GPL v2
 Group:		X11/Applications
 Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	6c181e7165893e047b45dd3c53637e8b
@@ -18,14 +18,11 @@ BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 %{?with_gtkhtml:BuildRequires:	gtkhtml-devel}
 BuildRequires:	libtool
-BuildRequires:	libxfce4mcs-devel >= 4.1.3
-BuildRequires:	libxfcegui4-devel >= 4.1.27
+BuildRequires:	libxfce4mcs-devel >= %{version}
+BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	xfce-mcs-manager-devel >= 4.1.3
+BuildRequires:	xfce-mcs-manager-devel >= %{version}
 Requires:	gxmessage
-Requires:	libxfce4mcs >= 4.1.3
-Requires:	libxfcegui4 >= 4.1.27
-Requires:	xfce-mcs-manager >= 4.1.3
 Conflicts:	xfce4-session < 0.1.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
