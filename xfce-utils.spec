@@ -1,10 +1,10 @@
 
-%define		_snap 20040806
+%define		_snap 20040813
 
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
-Version:	4.2.0
+Version:	4.1.5
 Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications
@@ -17,14 +17,14 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtkhtml-devel
 BuildRequires:	libtool
-BuildRequires:	libxfce4mcs-devel >= %{version}
-BuildRequires:	libxfcegui4-devel >= %{version}
+BuildRequires:	libxfce4mcs-devel >= 4.1.3
+BuildRequires:	libxfcegui4-devel >= 4.1.27
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	xfce-mcs-manager-devel >= %{version}
+BuildRequires:	xfce-mcs-manager-devel >= 4.1.3
 Requires:	gxmessage
-Requires:	libxfce4mcs >= %{version}
-Requires:	libxfcegui4 >= %{version}
-Requires:	xfce-mcs-manager >= %{version}
+Requires:	libxfce4mcs >= 4.1.3
+Requires:	libxfcegui4 >= 4.1.27
+Requires:	xfce-mcs-manager >= 4.1.3
 Conflicts:	xfce4-session < 0.1.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -106,11 +106,16 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/xfce4/INFO.html.es
 %lang(fr) %{_datadir}/xfce4/INFO.html.fr
 %lang(it) %{_datadir}/xfce4/INFO.html.it
+%{_datadir}/xfce4/COPYING*
+%{_datadir}/xfce4/BSD*
+%{_datadir}/xfce4/LGPL*
+%{_datadir}/xfce4/GPL*
+
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/xfce.css
-%{_datadir}/xfce4/doc/C
-%lang(fr) %{_datadir}/xfce4/doc/fr
-%lang(it) %{_datadir}/xfce4/doc/it
+%{_datadir}/xfce4/doc/C/*
+%lang(fr) %{_datadir}/xfce4/doc/fr/*
+%lang(it) %{_datadir}/xfce4/doc/it/*
 %{_iconsdir}/hicolor/*/*/*
 
 %{_datadir}/apps/switchdesk/Xclients.xfce4
