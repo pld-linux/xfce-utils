@@ -1,5 +1,6 @@
 #
 %define		snap 20040616
+#
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
