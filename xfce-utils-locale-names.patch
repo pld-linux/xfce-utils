@@ -1,10 +1,9 @@
-diff -urN xfce-utils-4.1.99.1.orig/configure.ac xfce-utils-4.1.99.1/configure.ac
---- xfce-utils-4.1.99.1.orig/configure.ac	2004-11-05 23:15:49.000000000 +0100
-+++ xfce-utils-4.1.99.1/configure.ac	2004-11-27 19:24:49.217779360 +0100
+--- xfce-utils-4.1.99.2/configure.ac.orig	2004-12-11 15:41:08.000000000 +0100
++++ xfce-utils-4.1.99.2/configure.ac	2004-12-13 22:14:00.166050712 +0100
 @@ -72,7 +72,7 @@
  
  dnl Check for i18n support
- BM_I18N([xfce-utils], [ar az be bg ca cs de es es_MX et eu fa fi fr gu he
+ BM_I18N([xfce-utils], [ar az be bg ca cs de en_GB es es_MX et eu fa fi fr gu he
 -		       hi hu it ja ko lt ms nl pa pl pt_BR pt_PT ru sk
 +		       hi hu it ja ko lt ms nl pa pl pt_BR pt ru sk
  		       sv ta tr uk vi zh_CN zh_TW])
