@@ -10,6 +10,7 @@ Group:		X11/Applications
 Source0:	%{name}-snap-%{snap}.tar.bz2
 # Source0-md5:	041708076ca9e08cef6f9d8139c3ca89
 Source1:	xfce4-xsession.desktop
+Patch0:		%{name}-gxmessage.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -19,6 +20,7 @@ BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
+Requires:	gxmessage
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
 Requires:	xfce-mcs-manager >= %{version}
@@ -33,6 +35,7 @@ xfce-utils zawiera narzêdzia dla ¶rodowiska XFce.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %build
 %{__libtoolize}
