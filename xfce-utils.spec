@@ -1,15 +1,15 @@
-#
-%define		snap 20040616
-#
+
+%define		_snap 20040806
+
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
-Version:	4.1.0
-Release:	0.%{snap}.1
+Version:	4.2.0
+Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications
-Source0:	%{name}-snap-%{snap}.tar.bz2
-# Source0-md5:	041708076ca9e08cef6f9d8139c3ca89
+Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
+# Source0-md5:	09e1c1cdd04af06c64bef36965394c00
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-gxmessage.patch
 URL:		http://www.xfce.org/
@@ -110,6 +110,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xfce4/doc/xfce.css
 %{_datadir}/xfce4/doc/C
 %lang(fr) %{_datadir}/xfce4/doc/fr
+%lang(it) %{_datadir}/xfce4/doc/it
+%{_iconsdir}/hicolor/*/*/*
 
 %{_datadir}/apps/switchdesk/Xclients.xfce4
 %{_datadir}/xsessions/xfce4.desktop
