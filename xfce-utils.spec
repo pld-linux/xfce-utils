@@ -1,15 +1,12 @@
-
-%define		_snap 20040816
-
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
-Version:	4.1.5
-Release:	0.%{_snap}.1
+Version:	4.1.90
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	eb5ae7c5ad13159d961d365ba4b85438
+Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	5c653aa09c5de1fe9c6f340b052c5009
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-gxmessage.patch
 URL:		http://www.xfce.org/
@@ -35,7 +32,7 @@ xfce-utils contains utilities for the XFce Desktop Environment.
 xfce-utils zawiera narzêdzia dla ¶rodowiska XFce.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 %patch0 -p1
 
 %build
@@ -74,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/xinitrc
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/xinitrc
 
 %{_desktopdir}/xfce-taskbar-settings.desktop
 
@@ -84,8 +81,11 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_datadir}/xfce4/AUTHORS.de
 %lang(es) %{_datadir}/xfce4/AUTHORS.es
 %lang(fr) %{_datadir}/xfce4/AUTHORS.fr
+%lang(he) %{_datadir}/xfce4/AUTHORS.he
 %lang(it) %{_datadir}/xfce4/AUTHORS.it
 %lang(lt) %{_datadir}/xfce4/AUTHORS.lt
+%lang(ru) %{_datadir}/xfce4/AUTHORS.ru
+%lang(sk) %{_datadir}/xfce4/AUTHORS.sk
 %lang(vi) %{_datadir}/xfce4/AUTHORS.vi
 %{_datadir}/xfce4/AUTHORS.html
 %lang(az) %{_datadir}/xfce4/AUTHORS.html.az
@@ -94,6 +94,9 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/xfce4/AUTHORS.html.es
 %lang(fr) %{_datadir}/xfce4/AUTHORS.html.fr
 %lang(it) %{_datadir}/xfce4/AUTHORS.html.it
+%lang(ru) %{_datadir}/xfce4/AUTHORS.html.ru
+%lang(sk) %{_datadir}/xfce4/AUTHORS.html.sk
+%lang(vi) %{_datadir}/xfce4/AUTHORS.html.vi
 %{_datadir}/xfce4/INFO
 %{_datadir}/xfce4/INFO.html
 %lang(ca) %{_datadir}/xfce4/INFO.ca
