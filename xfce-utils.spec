@@ -1,12 +1,12 @@
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
-Version:	4.0.4
-Release:	2
+Version:	4.0.5
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	34fe286ed9aa48e7d76e1c07904b0ecf
+Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	105e906b6f21a9360cc9a898dfb28604
 Source1:	xfce4-xsession.desktop
 URL:		http://www.xfce.org/
 BuildRequires:	automake
