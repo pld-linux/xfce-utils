@@ -2,11 +2,12 @@ Summary: 	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name: 		xfce-utils
 Version: 	3.99.2
-Release: 	1
+Release: 	2
 License:	GPL
 Group: 		X11/Applications
 Source0: 	http://linux.imp.mx/xfce4/rc2/xfce4-rc2/src/%{name}-%{version}.tar.gz
 # Source0-md5:	60adc91a9a2427a531187ff4ac87167d
+Source1:	XFce4.desktop
 URL: 		http://www.xfce.org/
 BuildRequires:	intltool
 BuildRequires:	libxfce4mcs-devel >= 3.99.2
@@ -44,6 +45,9 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
 
+mkdir -p $RPM_BUILD_ROOT/etc/X11/dm/Sessions
+install -m 644 %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/dm/Sessions/XFce4.desktop
+
 %find_lang %{name}
 
 %clean
@@ -55,6 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/X11/gdm/Sessions/XFce4
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/X11/dm/Sessions/XFce4.desktop
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/X11/wmsession.d/10XFce4
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/xinitrc
 %{_datadir}/xfce4/AUTHORS
