@@ -106,10 +106,15 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/xfce4/INFO.html.es
 %lang(fr) %{_datadir}/xfce4/INFO.html.fr
 %lang(it) %{_datadir}/xfce4/INFO.html.it
-%{_datadir}/xfce4/COPYING*
-%{_datadir}/xfce4/BSD*
-%{_datadir}/xfce4/LGPL*
-%{_datadir}/xfce4/GPL*
+%{_datadir}/xfce4/COPYING
+%{_datadir}/xfce4/COPYING.html
+%lang(vi) %{_datadir}/xfce4/COPYING.vi
+%{_datadir}/xfce4/BSD
+%{_datadir}/xfce4/BSD.html
+%{_datadir}/xfce4/LGPL
+%{_datadir}/xfce4/LGPL.html
+%{_datadir}/xfce4/GPL
+%{_datadir}/xfce4/GPL.html
 
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/xfce.css
