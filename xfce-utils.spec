@@ -9,7 +9,7 @@ Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	09e1c1cdd04af06c64bef36965394c00
+# Source0-md5:	4c77ce4d2ef3d512838fd95c184daeaa
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-gxmessage.patch
 URL:		http://www.xfce.org/
