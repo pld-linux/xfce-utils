@@ -4,12 +4,12 @@
 Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska Xfce
 Name:		xfce-utils
-Version:	4.1.99.3
-Release:	2
+Version:	4.2.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	6c181e7165893e047b45dd3c53637e8b
+Source0:	http://www.us.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
+# Source0-md5:	879ef5cfbd9e4cdd87dbd26fce07b6d6
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-gxmessage.patch
@@ -91,8 +91,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(he) %{_datadir}/xfce4/AUTHORS.he
 %lang(it) %{_datadir}/xfce4/AUTHORS.it
 %lang(lt) %{_datadir}/xfce4/AUTHORS.lt
+%lang(ro) %{_datadir}/xfce4/AUTHORS.ro
 %lang(ru) %{_datadir}/xfce4/AUTHORS.ru
 %lang(sk) %{_datadir}/xfce4/AUTHORS.sk
+%lang(uk) %{_datadir}/xfce4/AUTHORS.uk
 %lang(vi) %{_datadir}/xfce4/AUTHORS.vi
 %{_datadir}/xfce4/AUTHORS.html
 %lang(az) %{_datadir}/xfce4/AUTHORS.html.az
@@ -101,6 +103,8 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/xfce4/AUTHORS.html.es
 %lang(fr) %{_datadir}/xfce4/AUTHORS.html.fr
 %lang(it) %{_datadir}/xfce4/AUTHORS.html.it
+%lang(lt) %{_datadir}/xfce4/AUTHORS.html.lt
+%lang(ro) %{_datadir}/xfce4/AUTHORS.html.ro
 %lang(ru) %{_datadir}/xfce4/AUTHORS.html.ru
 %lang(sk) %{_datadir}/xfce4/AUTHORS.html.sk
 %lang(vi) %{_datadir}/xfce4/AUTHORS.html.vi
@@ -110,12 +114,19 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/xfce4/INFO.es
 %lang(fr) %{_datadir}/xfce4/INFO.fr
 %lang(it) %{_datadir}/xfce4/INFO.it
+%lang(lt) %{_datadir}/xfce4/INFO.lt
+%lang(ro) %{_datadir}/xfce4/INFO.ro
+%lang(ru) %{_datadir}/xfce4/INFO.ru
+%lang(uk) %{_datadir}/xfce4/INFO.uk
 %lang(vi) %{_datadir}/xfce4/INFO.vi
 %lang(ca) %{_datadir}/xfce4/INFO.html.ca
 %lang(de) %{_datadir}/xfce4/INFO.html.de
 %lang(es) %{_datadir}/xfce4/INFO.html.es
 %lang(fr) %{_datadir}/xfce4/INFO.html.fr
 %lang(it) %{_datadir}/xfce4/INFO.html.it
+%lang(lt) %{_datadir}/xfce4/INFO.html.lt
+%lang(ro) %{_datadir}/xfce4/INFO.html.ro
+%lang(ru) %{_datadir}/xfce4/INFO.html.ru
 %{_datadir}/xfce4/COPYING
 %{_datadir}/xfce4/COPYING.html
 %lang(vi) %{_datadir}/xfce4/COPYING.vi
@@ -131,10 +142,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xfce4/doc/xfce-mouse.png
 %{_datadir}/xfce4/doc/C/*.html
 %{_datadir}/xfce4/doc/C/images/*
-%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
-%lang(fr) %{_datadir}/xfce4/doc/fr/images/*
-%lang(it) %{_datadir}/xfce4/doc/it/*.html
-%lang(it) %{_datadir}/xfce4/doc/it/images/*
 %{_iconsdir}/hicolor/*/*/*
 
 %{_datadir}/apps/switchdesk/Xclients.xfce4
