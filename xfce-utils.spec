@@ -1,5 +1,5 @@
 
-%define		_snap 20040813
+%define		_snap 20040816
 
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
@@ -9,7 +9,7 @@ Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	4c77ce4d2ef3d512838fd95c184daeaa
+# Source0-md5:	eb5ae7c5ad13159d961d365ba4b85438
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-gxmessage.patch
 URL:		http://www.xfce.org/
