@@ -1,3 +1,6 @@
+#
+%bcond_without	gtkhtml		# build without gtkhtml support
+#
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
@@ -12,7 +15,7 @@ Patch0:		%{name}-gxmessage.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	gtkhtml-devel
+%{?with_gtkhtml:BuildRequires:	gtkhtml-devel}
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= 4.1.3
 BuildRequires:	libxfcegui4-devel >= 4.1.27
@@ -42,8 +45,8 @@ xfce-utils zawiera narzêdzia dla ¶rodowiska XFce.
 %{__automake}
 %{__autoconf}
 %configure \
-	--enable-gdm \
-	--enable-gtkhtml
+	%{?with_gtkhtml:--enable-gtkhtml} \
+	--enable-gdm
 %{__make}
 
 %install
