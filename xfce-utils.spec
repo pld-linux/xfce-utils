@@ -38,7 +38,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README TODO ChangeLog NEWS INSTALL COPYING AUTHORS
-%{_bindir}/*
-%{_libdir}/xfce4/mcs-plugins/*
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
+%{_libdir}/xfce4/mcs-plugins/*.la
+%{_libdir}/xfce4/mcs-plugins/*.a
 %{_datadir}/*
 %config(noreplace) %{_sysconfdir}/*
