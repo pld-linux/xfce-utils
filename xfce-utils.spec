@@ -23,6 +23,9 @@ BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 Requires:	gxmessage
+Requires:	libxfce4mcs >= %{version}
+Requires:	libxfcegui4 >= %{version}
+Requires:	xfce-mcs-manager >= %{version}
 Conflicts:	xfce4-session < 0.1.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
