@@ -1,15 +1,15 @@
-#
+# Conditional build:
 %bcond_with	gtkhtml		# build with gtkhtml support
 #
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
-Version:	4.1.99.1
+Version:	4.1.99.2
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	c88e6e06df41579e8c67c75ec2f2fa37
+# Source0-md5:	2a114ebd3a8405dde4cd45460936bf77
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-gxmessage.patch
@@ -128,6 +128,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/xfce.css
+%{_datadir}/xfce4/doc/xfce-mouse.png
 %{_datadir}/xfce4/doc/C/*.html
 %{_datadir}/xfce4/doc/C/images/*
 %lang(fr) %{_datadir}/xfce4/doc/fr/*.html
