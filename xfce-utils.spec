@@ -11,6 +11,7 @@ URL: 		http://www.xfce.org/
 BuildRequires:	intltool
 BuildRequires:	libxfce4mcs-devel >= 0.0.3
 BuildRequires: 	libxfcegui4-devel >= 0.0.22
+BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	xfce-mcs-manager-devel
 Requires:	libxfce4mcs >= 0.0.3
 Requires:	libxfcegui4 >= 0.0.22
