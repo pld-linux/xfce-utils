@@ -2,7 +2,7 @@ Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
 Version:	4.0.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 #Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
@@ -21,7 +21,7 @@ BuildRequires:	xfce-mcs-manager-devel >= %{version}
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
 Requires:	xfce-mcs-manager >= %{version}
-Conflicts:	xfce4-session < 0.1.1-2
+Obsoletes:	xfce4-session < 0.1.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
