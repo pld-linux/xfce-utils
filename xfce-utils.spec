@@ -56,8 +56,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
-rm -f $RPM_BUILD_ROOT%{_datadir}/xfce4/COPYING*
-rm -f $RPM_BUILD_ROOT%{_datadir}/xfce4/{BSD,LGPL,GPL}*
+#rm -f $RPM_BUILD_ROOT%{_datadir}/xfce4/COPYING*
+#rm -f $RPM_BUILD_ROOT%{_datadir}/xfce4/{BSD,LGPL,GPL}*
 rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/X11/{dm,gdm,wmsession.d}
 rm -f $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce.desktop
 
