@@ -56,7 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/X11/gdm/Sessions/XFce4
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/X11/wmsession.d/10XFce4
-%dir %{_sysconfdir}/xfce4
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/xinitrc
 %{_datadir}/xfce4/AUTHORS
 %lang(ca) %{_datadir}/xfce4/AUTHORS.ca
