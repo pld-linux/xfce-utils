@@ -58,6 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
+%dir %{_sysconfdir}/xfce4
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/X11/gdm/Sessions/XFce4
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/X11/dm/Sessions/XFce4.desktop
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/X11/wmsession.d/10XFce4
