@@ -1,12 +1,12 @@
---- xfce-utils-4.0.5/configure.ac.orig	Thu Mar 18 00:21:49 2004
-+++ xfce-utils-4.0.5/configure.ac	Thu Jul  8 15:05:05 2004
+--- xfce-utils-4.0.6/configure.ac.orig	2004-07-08 21:12:37.000000000 +0200
++++ xfce-utils-4.0.6/configure.ac	2004-07-12 18:02:45.352348840 +0200
 @@ -65,8 +65,8 @@
  fi
  
  dnl Check for i18n support
--BM_I18N([xfce-utils], [ar az bg ca cs de es es_MX fa_IR fi fr hi hu it ja
+-BM_I18N([xfce-utils], [ar az bg ca cs de es es_MX et eu fa_IR fi fr hi hu it ja
 -	 ko lt ms nl no pl pt_BR pt_PT ru sv ta tr uk vi zh_CN zh_TW])
-+BM_I18N([xfce-utils], [ar az bg ca cs de es es_MX fa fi fr hi hu it ja
++BM_I18N([xfce-utils], [ar az bg ca cs de es es_MX et eu fa fi fr hi hu it ja
 +	 ko lt ms nl nb pl pt_BR pt ru sv ta tr uk vi zh_CN zh_TW])
  
  dnl Check for required packages
