@@ -2,15 +2,18 @@ Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
 Version:	4.0.5
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 #Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	105e906b6f21a9360cc9a898dfb28604
 Source1:	xfce4-xsession.desktop
+Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
@@ -29,9 +32,18 @@ xfce-utils zawiera narzêdzia dla ¶rodowiska XFce.
 
 %prep
 %setup -q
+%patch0 -p1
+
+mv -f po/{fa_IR,fa}.po
+mv -f po/{no,nb}.po
+mv -f po/{pt_PT,pt}.po
 
 %build
-cp -f /usr/share/automake/config.sub .
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--enable-gdm
 %{__make}
@@ -43,8 +55,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
-rm -rf $RPM_BUILD_ROOT%{_datadir}/xfce4/doc/fr
-rm -f $RPM_BUILD_ROOT%{_datadir}/xfce4/COPYING.{html,vi}
 
 install -d $RPM_BUILD_ROOT%{_datadir}/xsessions
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce4.desktop
@@ -66,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_datadir}/xfce4/AUTHORS.de
 %lang(es) %{_datadir}/xfce4/AUTHORS.es
 %lang(fr) %{_datadir}/xfce4/AUTHORS.fr
+%lang(it) %{_datadir}/xfce4/AUTHORS.it
 %lang(vi) %{_datadir}/xfce4/AUTHORS.vi
 %{_datadir}/xfce4/AUTHORS.html
 %lang(az) %{_datadir}/xfce4/AUTHORS.html.az
@@ -73,22 +84,34 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_datadir}/xfce4/AUTHORS.html.de
 %lang(es) %{_datadir}/xfce4/AUTHORS.html.es
 %lang(fr) %{_datadir}/xfce4/AUTHORS.html.fr
+%lang(it) %{_datadir}/xfce4/AUTHORS.html.it
 %{_datadir}/xfce4/BSD
+%{_datadir}/xfce4/BSD.html
 %{_datadir}/xfce4/COPYING
+%lang(vi) %{_datadir}/xfce4/COPYING.vi
+%{_datadir}/xfce4/COPYING.html
 %{_datadir}/xfce4/GPL
+%{_datadir}/xfce4/GPL.html
 %{_datadir}/xfce4/INFO
 %{_datadir}/xfce4/INFO.html
 %lang(ca) %{_datadir}/xfce4/INFO.ca
+%lang(es) %{_datadir}/xfce4/INFO.es
 %lang(fr) %{_datadir}/xfce4/INFO.fr
+%lang(it) %{_datadir}/xfce4/INFO.it
 %lang(vi) %{_datadir}/xfce4/INFO.vi
 %lang(ca) %{_datadir}/xfce4/INFO.html.ca
 %lang(de) %{_datadir}/xfce4/INFO.html.de
+%lang(es) %{_datadir}/xfce4/INFO.html.es
 %lang(fr) %{_datadir}/xfce4/INFO.html.fr
+%lang(it) %{_datadir}/xfce4/INFO.html.it
 %{_datadir}/xfce4/LGPL
+%{_datadir}/xfce4/LGPL.html
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/xfce.css
 %{_datadir}/xfce4/doc/C/*.html
 %{_datadir}/xfce4/doc/C/images/*
+%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
+%lang(fr) %{_datadir}/xfce4/doc/fr/images/*
 
 %{_datadir}/apps/switchdesk/Xclients.xfce4
 %{_datadir}/xsessions/xfce4.desktop
