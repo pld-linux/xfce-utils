@@ -8,6 +8,7 @@ Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	b0cd19f9f06885a878730fa78afef415
 URL:		http://www.xfce.org/
+BuildRequires:	automake
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
@@ -27,6 +28,7 @@ xfce-utils zawiera narzêdzia dla ¶rodowiska XFce.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub .
 %configure \
 	--enable-gdm
 %{__make}
