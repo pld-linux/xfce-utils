@@ -11,7 +11,8 @@ Group:		X11/Applications
 Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	c88e6e06df41579e8c67c75ec2f2fa37
 Source1:	xfce4-xsession.desktop
-Patch0:		%{name}-gxmessage.patch
+Patch0:		%{name}-locale-names.patch
+Patch1:		%{name}-gxmessage.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -37,6 +38,9 @@ xfce-utils zawiera narzêdzia dla ¶rodowiska XFce.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+mv -f po/{pt_PT,pt}.po
 
 %build
 %{__libtoolize}
