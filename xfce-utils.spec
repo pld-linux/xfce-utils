@@ -16,7 +16,7 @@ BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= 3.99.2
 Requires:	libxfce4mcs >= 3.99.2
 Requires:	libxfcegui4 >= 3.99.2
-Requires:	xfce-mcs-manager >= 3.99.2
+Requires:	xfce-mcs-manager >= 3.99.2-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -58,7 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
-%dir %{_sysconfdir}/xfce4
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/X11/gdm/Sessions/XFce4
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/X11/dm/Sessions/XFce4.desktop
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/X11/wmsession.d/10XFce4
