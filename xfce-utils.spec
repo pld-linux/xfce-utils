@@ -1,5 +1,5 @@
 #
-%bcond_without	gtkhtml		# build without gtkhtml support
+%bcond_with	gtkhtml		# build with gtkhtml support
 #
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
