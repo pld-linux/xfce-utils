@@ -1,21 +1,21 @@
 Summary:	Utilities for the XFce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska XFce
 Name:		xfce-utils
-Version:	3.99.4
+Version:	4.0.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce4-rc4/src/%{name}-%{version}.tar.gz
-# Source0-md5:	934c513c212cdead34d8922047acaffa
+Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
+# Source0-md5:	dea0838049c21300ba0232297b8d8126
 URL:		http://www.xfce.org/
 BuildRequires:	intltool
-BuildRequires:	libxfce4mcs-devel >= 3.99.4
-BuildRequires:	libxfcegui4-devel >= 3.99.4
+BuildRequires:	libxfce4mcs-devel >= %{version}
+BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	xfce-mcs-manager-devel >= 3.99.4
-Requires:	libxfce4mcs >= 3.99.4
-Requires:	libxfcegui4 >= 3.99.4
-Requires:	xfce-mcs-manager >= 3.99.4
+BuildRequires:	xfce-mcs-manager-devel >= %{version}
+Requires:	libxfce4mcs >= %{version}
+Requires:	libxfcegui4 >= %{version}
+Requires:	xfce-mcs-manager >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
