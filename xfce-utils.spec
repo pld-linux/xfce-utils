@@ -17,6 +17,7 @@ URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	dbh-devel >= 1.0
+BuildRequires:	gettext-devel
 %{?with_gtkhtml:BuildRequires:	gtkhtml-devel}
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
