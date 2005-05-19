@@ -4,12 +4,12 @@
 Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska Xfce
 Name:		xfce-utils
-Version:	4.2.1
+Version:	4.2.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.us.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	73b75582ab05f443e3106d4d661207e9
+# Source0-md5:	585e1fd48dee70c50271ac478e8adcd0
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-gxmessage.patch
@@ -24,6 +24,7 @@ BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
+BuildRequires:	xfce4-dev-tools
 Requires:	gxmessage
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
@@ -46,7 +47,7 @@ mv -f po/{pt_PT,pt}.po
 
 %build
 %{__libtoolize}
-%{__aclocal} -I m4
+%{__aclocal} -I %{_datadir}/xfce4/dev-tools/m4macros
 %{__autoheader}
 %{__automake}
 %{__autoconf}
@@ -89,9 +90,12 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ca) %{_datadir}/xfce4/AUTHORS.ca
 %lang(de) %{_datadir}/xfce4/AUTHORS.de
 %lang(es) %{_datadir}/xfce4/AUTHORS.es
+%lang(eu) %{_datadir}/xfce4/AUTHORS.eu
+%lang(fi) %{_datadir}/xfce4/AUTHORS.fi
 %lang(fr) %{_datadir}/xfce4/AUTHORS.fr
 %lang(he) %{_datadir}/xfce4/AUTHORS.he
 %lang(it) %{_datadir}/xfce4/AUTHORS.it
+%lang(ja) %{_datadir}/xfce4/AUTHORS.ja
 %lang(lt) %{_datadir}/xfce4/AUTHORS.lt
 %lang(ro) %{_datadir}/xfce4/AUTHORS.ro
 %lang(ru) %{_datadir}/xfce4/AUTHORS.ru
@@ -103,8 +107,11 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ca) %{_datadir}/xfce4/AUTHORS.html.ca
 %lang(de) %{_datadir}/xfce4/AUTHORS.html.de
 %lang(es) %{_datadir}/xfce4/AUTHORS.html.es
+%lang(eu) %{_datadir}/xfce4/AUTHORS.html.eu
+%lang(fi) %{_datadir}/xfce4/AUTHORS.html.fi
 %lang(fr) %{_datadir}/xfce4/AUTHORS.html.fr
 %lang(it) %{_datadir}/xfce4/AUTHORS.html.it
+%lang(ja) %{_datadir}/xfce4/AUTHORS.html.ja
 %lang(lt) %{_datadir}/xfce4/AUTHORS.html.lt
 %lang(ro) %{_datadir}/xfce4/AUTHORS.html.ro
 %lang(ru) %{_datadir}/xfce4/AUTHORS.html.ru
@@ -114,8 +121,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xfce4/INFO.html
 %lang(ca) %{_datadir}/xfce4/INFO.ca
 %lang(es) %{_datadir}/xfce4/INFO.es
+%lang(fi) %{_datadir}/xfce4/INFO.fi
 %lang(fr) %{_datadir}/xfce4/INFO.fr
 %lang(it) %{_datadir}/xfce4/INFO.it
+%lang(ja) %{_datadir}/xfce4/INFO.ja
 %lang(lt) %{_datadir}/xfce4/INFO.lt
 %lang(ro) %{_datadir}/xfce4/INFO.ro
 %lang(ru) %{_datadir}/xfce4/INFO.ru
@@ -124,8 +133,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ca) %{_datadir}/xfce4/INFO.html.ca
 %lang(de) %{_datadir}/xfce4/INFO.html.de
 %lang(es) %{_datadir}/xfce4/INFO.html.es
+%lang(fi) %{_datadir}/xfce4/INFO.html.fi
 %lang(fr) %{_datadir}/xfce4/INFO.html.fr
 %lang(it) %{_datadir}/xfce4/INFO.html.it
+%lang(ja) %{_datadir}/xfce4/INFO.html.ja
 %lang(lt) %{_datadir}/xfce4/INFO.html.lt
 %lang(ro) %{_datadir}/xfce4/INFO.html.ro
 %lang(ru) %{_datadir}/xfce4/INFO.html.ru
@@ -144,6 +155,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xfce4/doc/xfce-mouse.png
 %{_datadir}/xfce4/doc/C/*.html
 %{_datadir}/xfce4/doc/C/images/*
+%lang(fr) %{_datadir}/xfce4/doc/fr
 %{_iconsdir}/hicolor/*/*/*
 
 %{_datadir}/apps/switchdesk/Xclients.xfce4
