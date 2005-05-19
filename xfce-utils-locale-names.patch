@@ -1,9 +1,9 @@
---- xfce-utils-4.2.0/configure.ac.orig	2005-01-09 13:35:05.000000000 +0100
-+++ xfce-utils-4.2.0/configure.ac	2005-01-17 14:44:46.320469864 +0100
+--- xfce-utils-4.2.2/configure.ac.orig	2005-05-15 10:10:18.000000000 +0200
++++ xfce-utils-4.2.2/configure.ac	2005-05-19 13:08:26.864817720 +0200
 @@ -73,7 +73,7 @@
  dnl Check for i18n support
- BM_I18N([xfce-utils], [ar az be bg ca cs de en_GB es es_MX et eu fa fi \
-                        fr gu he hi hu it ja ko lt ms nl pa pl pt_BR \
+ BM_I18N([xfce-utils], [ar az be bg bn_IN ca cs da de el en_GB es es_MX et
+ 		       eu fa fi fr gu he hi hu it ja ko lt mr ms nl pa pl pt_BR 
 -                       pt_PT ro ru sk sv ta tr uk vi zh_CN zh_TW])
 +                       pt ro ru sk sv ta tr uk vi zh_CN zh_TW])
  
