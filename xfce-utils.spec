@@ -4,12 +4,12 @@
 Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska Xfce
 Name:		xfce-utils
-Version:	4.2.2
+Version:	4.2.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.us.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	585e1fd48dee70c50271ac478e8adcd0
+# Source0-md5:	8028266d03c5bae7c7ccbddd6656ea97
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-gxmessage.patch
@@ -102,6 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sk) %{_datadir}/xfce4/AUTHORS.sk
 %lang(uk) %{_datadir}/xfce4/AUTHORS.uk
 %lang(vi) %{_datadir}/xfce4/AUTHORS.vi
+%lang(zh_TW) %{_datadir}/xfce4/AUTHORS.zh_TW
 %{_datadir}/xfce4/AUTHORS.html
 %lang(az) %{_datadir}/xfce4/AUTHORS.html.az
 %lang(ca) %{_datadir}/xfce4/AUTHORS.html.ca
@@ -117,6 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ru) %{_datadir}/xfce4/AUTHORS.html.ru
 %lang(sk) %{_datadir}/xfce4/AUTHORS.html.sk
 %lang(vi) %{_datadir}/xfce4/AUTHORS.html.vi
+%lang(zh_TW) %{_datadir}/xfce4/AUTHORS.html.zh_TW
 %{_datadir}/xfce4/INFO
 %{_datadir}/xfce4/INFO.html
 %lang(ca) %{_datadir}/xfce4/INFO.ca
@@ -152,10 +154,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/xfce.css
+%{_datadir}/xfce4/doc/xfce-rtl.css
 %{_datadir}/xfce4/doc/xfce-mouse.png
 %{_datadir}/xfce4/doc/C/*.html
 %{_datadir}/xfce4/doc/C/images/*
 %lang(fr) %{_datadir}/xfce4/doc/fr
+%lang(he) %{_datadir}/xfce4/doc/he
 %{_iconsdir}/hicolor/*/*/*
 
 %{_datadir}/apps/switchdesk/Xclients.xfce4
