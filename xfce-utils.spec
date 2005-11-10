@@ -156,10 +156,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xfce4/doc/xfce.css
 %{_datadir}/xfce4/doc/xfce-rtl.css
 %{_datadir}/xfce4/doc/xfce-mouse.png
-%{_datadir}/xfce4/doc/C/*.html
-%{_datadir}/xfce4/doc/C/images/*
-%lang(fr) %{_datadir}/xfce4/doc/fr
-%lang(he) %{_datadir}/xfce4/doc/he
+%{_datadir}/xfce4/doc/C/*
+%lang(fr) %{_datadir}/xfce4/doc/fr/*
+%lang(he) %{_datadir}/xfce4/doc/he/*
 %{_iconsdir}/hicolor/*/*/*
 
 %{_datadir}/apps/switchdesk/Xclients.xfce4
