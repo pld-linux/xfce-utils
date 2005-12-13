@@ -81,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xdg/xfce4/xinitrc
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/xinitrc
 
 %{_desktopdir}/xfce-taskbar-settings.desktop
 
