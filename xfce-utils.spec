@@ -29,6 +29,7 @@ Requires:	gxmessage
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
 Requires:	xfce-mcs-manager >= %{version}
+Requires:	xlockmore
 Conflicts:	xfce4-session < 0.1.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
