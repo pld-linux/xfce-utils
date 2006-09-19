@@ -6,7 +6,7 @@ Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska Xfce
 Name:		xfce-utils
 Version:	4.3.99.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.us.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
@@ -74,6 +74,9 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
 rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/X11/{dm,gdm,wmsession.d}
 rm -f $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce.desktop
 
+# switchdesk provides Xclients.Xfce4
+rm -rf $RPM_BUILD_ROOT%{_datadir}/apps
+
 install -d $RPM_BUILD_ROOT%{_datadir}/xsessions
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce4.desktop
 
@@ -118,5 +121,4 @@ rm -rf $RPM_BUILD_ROOT
 %lang(it) %{_datadir}/xfce4/doc/it/*
 %{_iconsdir}/hicolor/*/*/*
 
-%{_datadir}/apps/switchdesk/Xclients.xfce4
 %{_datadir}/xsessions/xfce4.desktop
