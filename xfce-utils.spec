@@ -5,12 +5,12 @@
 Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl):	Narzêdzia dla ¶rodowiska Xfce
 Name:		xfce-utils
-Version:	4.3.99.2
+Version:	4.4.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.us.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	de6502dd93176b2a60e2e66bf052024f
+# Source0-md5:	e90a98cf6de0610170c39a4eae36ad8f
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-gxmessage.patch
@@ -28,9 +28,9 @@ BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	xfce4-dev-tools
-Requires(post,postun):	gtk+2 >= 2:2.10.1
-Requires:	gxmessage
+Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
+Requires:	gxmessage
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
 Requires:	xfce-mcs-manager >= %{version}
@@ -69,8 +69,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
-#rm -f $RPM_BUILD_ROOT%{_datadir}/xfce4/COPYING*
-#rm -f $RPM_BUILD_ROOT%{_datadir}/xfce4/{BSD,LGPL,GPL}*
 rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/X11/{dm,gdm,wmsession.d}
 rm -f $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce.desktop
 
@@ -114,7 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xfce4/GPL
 
 %docdir %{_datadir}/xfce4/doc
-%{_datadir}/xfce4/doc/xfce.css
+%{_datadir}/xfce4/doc/xfce*.css
 %{_datadir}/xfce4/doc/xfce-mouse.png
 %{_datadir}/xfce4/doc/C/*
 %lang(fr) %{_datadir}/xfce4/doc/fr/*
