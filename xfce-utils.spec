@@ -2,7 +2,7 @@
 %bcond_with	gtkhtml		# build with gtkhtml support
 #
 Summary:	Utilities for the Xfce Desktop Environment
-Summary(pl):	Narzêdzia dla ¶rodowiska Xfce
+Summary(pl.UTF-8):   NarzÄ™dzia dla Å›rodowiska Xfce
 Name:		xfce-utils
 Version:	4.3.90.1
 Release:	1
@@ -36,8 +36,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 xfce-utils contains utilities for the Xfce Desktop Environment.
 
-%description -l pl
-xfce-utils zawiera narzêdzia dla ¶rodowiska Xfce.
+%description -l pl.UTF-8
+xfce-utils zawiera narzÄ™dzia dla Å›rodowiska Xfce.
 
 %prep
 %setup -q
