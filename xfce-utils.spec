@@ -3,7 +3,7 @@
 %bcond_with	gtkhtml		# build with gtkhtml support
 #
 Summary:	Utilities for the Xfce Desktop Environment
-Summary(pl.UTF-8):   Narzędzia dla środowiska Xfce
+Summary(pl.UTF-8):	Narzędzia dla środowiska Xfce
 Name:		xfce-utils
 Version:	4.4.0
 Release:	1
