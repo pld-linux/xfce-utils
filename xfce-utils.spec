@@ -5,19 +5,18 @@
 Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Narzędzia dla środowiska Xfce
 Name:		xfce-utils
-Version:	4.4.1
+Version:	4.4.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.us.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	f7d95088e327bd8a64164696d39a1966
+Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	119dd3f1daedfa41e3be89bad8997336
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-gxmessage.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	dbh-devel >= 1.0
 BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gettext-devel
 %{?with_gtkhtml:BuildRequires:	gtkhtml-devel}
@@ -27,12 +26,13 @@ BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
-BuildRequires:	xfce4-dev-tools
+BuildRequires:	xfce4-dev-tools >= 4.4.0.1
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires:	gxmessage
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
+Requires:	which
 Requires:	xfce-mcs-manager >= %{version}
 Requires:	xlockmore
 Conflicts:	xfce4-session < 0.1.1-2
@@ -49,6 +49,7 @@ xfce-utils zawiera narzędzia dla środowiska Xfce.
 %patch0 -p1
 %patch1 -p1
 
+mv -f po/{nb_NO,nb}.po
 mv -f po/{pt_PT,pt}.po
 
 %build
@@ -93,6 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS TODO
 %attr(755,root,root) %{_bindir}/*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/Xft.xrdb
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/xinitrc
 %{_datadir}/dbus-1/services/*.service
 %{_datadir}/xfce4/AUTHORS
