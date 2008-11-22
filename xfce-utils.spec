@@ -35,6 +35,7 @@ Requires:	libxfcegui4 >= %{version}
 Requires:	which
 Requires:	xfce-mcs-manager >= %{version}
 Requires:	xlockmore
+Requires:	xorg-app-xrdb
 Conflicts:	xfce4-session < 0.1.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
