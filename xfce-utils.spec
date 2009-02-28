@@ -1,39 +1,30 @@
-#
-# Conditional build:
-%bcond_with	gtkhtml		# build with gtkhtml support
-#
 Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Narzędzia dla środowiska Xfce
 Name:		xfce-utils
-Version:	4.4.3
-Release:	0.1
+Version:	4.6.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	6d6ae1f048e1dc1348ad050498af5a18
+# Source0-md5:	b192940801a7bd9bb800e570a299ecde
 Source1:	xfce4-xsession.desktop
-Patch0:		%{name}-locale-names.patch
-Patch1:		%{name}-gxmessage.patch
+Patch0:		%{name}-gxmessage.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gettext-devel
-%{?with_gtkhtml:BuildRequires:	gtkhtml-devel}
+BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	libtool
-BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
-BuildRequires:	xfce-mcs-manager-devel >= %{version}
-BuildRequires:	xfce4-dev-tools >= 4.4.0.1
+BuildRequires:	xfce4-dev-tools >= 4.6.0
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires:	gxmessage
-Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
 Requires:	which
-Requires:	xfce-mcs-manager >= %{version}
 Requires:	xlockmore
 Requires:	xorg-app-xrdb
 Conflicts:	xfce4-session < 0.1.1-2
@@ -48,36 +39,34 @@ xfce-utils zawiera narzędzia dla środowiska Xfce.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-
-mv -f po/{nb_NO,nb}.po
-mv -f po/{pt_PT,pt}.po
 
 %build
+%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoheader}
 %{__automake}
 %{__autoconf}
 %configure \
-	%{?with_gtkhtml:--enable-gtkhtml} \
 	--enable-gdm
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_datadir}/xsessions
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
+mv $RPM_BUILD_ROOT%{_datadir}/locale/nb{_NO,}
+mv $RPM_BUILD_ROOT%{_datadir}/locale/pt{_PT,}
+
 rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/X11/{dm,gdm,wmsession.d}
 rm -f $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce.desktop
 
 # switchdesk provides Xclients.Xfce4
 rm -rf $RPM_BUILD_ROOT%{_datadir}/apps
 
-install -d $RPM_BUILD_ROOT%{_datadir}/xsessions
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce4.desktop
 
 %find_lang %{name}
@@ -95,12 +84,16 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS TODO
 %attr(755,root,root) %{_bindir}/*
+%dir %{_libdir}/xfce4/xfconf-migration
+%attr(755,root,root) %{_libdir}/xfce4/xfconf-migration/xfconf-migration-4.6.pl
+%{_sysconfdir}/xdg/autostart/xfconf-migration-4.6.desktop
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/Xft.xrdb
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/xinitrc
 %{_datadir}/dbus-1/services/*.service
 %{_datadir}/xfce4/AUTHORS
 %{_datadir}/xfce4/INFO
 %lang(ca) %{_datadir}/xfce4/INFO.ca
+%lang(de) %{_datadir}/xfce4/INFO.de
 %lang(es) %{_datadir}/xfce4/INFO.es
 %lang(fi) %{_datadir}/xfce4/INFO.fi
 %lang(fr) %{_datadir}/xfce4/INFO.fr
