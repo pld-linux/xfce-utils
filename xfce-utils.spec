@@ -9,7 +9,7 @@ Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.
 # Source0-md5:	b192940801a7bd9bb800e570a299ecde
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-gxmessage.patch
-URL:		http://www.xfce.org/
+URL:		http://www.xfce.org/projects/xfce-utils/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.62
