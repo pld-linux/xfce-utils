@@ -47,8 +47,7 @@ xfce-utils zawiera narzędzia dla środowiska Xfce.
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure \
-	--enable-gdm
+%configure 
 %{__make}
 
 %install
