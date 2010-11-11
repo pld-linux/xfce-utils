@@ -2,13 +2,14 @@ Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Narzędzia dla środowiska Xfce
 Name:		xfce-utils
 Version:	4.6.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	1aa2362b11e79e56d52ce0d265faf1b6
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-gxmessage.patch
+Patch1:		%{name}-am.patch
 URL:		http://www.xfce.org/projects/xfce-utils/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -25,6 +26,7 @@ Requires(post,postun):	hicolor-icon-theme
 Requires:	gxmessage
 Requires:	libxfcegui4 >= %{version}
 Requires:	which
+Requires:	xfce4-dirs >= 4.6
 Requires:	xlockmore
 Requires:	xorg-app-xrdb
 Conflicts:	xfce4-session < 0.1.1-2
@@ -39,6 +41,7 @@ xfce-utils zawiera narzędzia dla środowiska Xfce.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__intltoolize}
@@ -103,12 +106,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xfce4/LGPL
 %{_datadir}/xfce4/GPL
 
-%docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/xfce*.css
 %{_datadir}/xfce4/doc/xfce-mouse.png
-%{_datadir}/xfce4/doc/C/*
-%lang(fr) %{_datadir}/xfce4/doc/fr/*
-%lang(it) %{_datadir}/xfce4/doc/it/*
+%{_datadir}/xfce4/doc/C/*.html
+%{_datadir}/xfce4/doc/C/images/*.jpg
+%{_datadir}/xfce4/doc/C/images/*.png
+%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
+%lang(it) %{_datadir}/xfce4/doc/it/*.html
+
 %{_iconsdir}/hicolor/*/*/*
 
 %{_datadir}/xsessions/xfce4.desktop
