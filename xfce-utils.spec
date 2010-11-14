@@ -61,6 +61,8 @@ install -d $RPM_BUILD_ROOT%{_datadir}/xsessions
 rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/X11/{dm,gdm,wmsession.d}
 rm -f $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce.desktop
 
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
+
 # switchdesk provides Xclients.Xfce4
 rm -rf $RPM_BUILD_ROOT%{_datadir}/apps
 
