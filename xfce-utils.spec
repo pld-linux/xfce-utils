@@ -1,15 +1,14 @@
 Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Narzędzia dla środowiska Xfce
 Name:		xfce-utils
-Version:	4.6.1
-Release:	2
+Version:	4.7.1
+Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	1aa2362b11e79e56d52ce0d265faf1b6
+Source0:	http://www.xfce.org/archive/xfce/4.8pre1/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	3311e57ea7376ba7913a8676a37d2932
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-gxmessage.patch
-Patch1:		%{name}-am.patch
 URL:		http://www.xfce.org/projects/xfce-utils/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -17,14 +16,16 @@ BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	libtool
-BuildRequires:	libxfcegui4-devel >= %{version}
+#BuildRequires:	libxfce4ui-devel >= %{version}
+BuildRequires:	libxfce4ui-devel >= 4.7.0
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xfce4-dev-tools >= 4.6.0
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires:	gxmessage
-Requires:	libxfcegui4 >= %{version}
+#Requires:	libxfce4ui >= %{version}
+Requires:	libxfce4ui >= 4.7.0
 Requires:	which
 Requires:	xfce4-dirs >= 4.6
 Requires:	xlockmore
@@ -41,7 +42,6 @@ xfce-utils zawiera narzędzia dla środowiska Xfce.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__intltoolize}
@@ -89,31 +89,32 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/Xft.xrdb
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/xinitrc
 %{_datadir}/dbus-1/services/*.service
-%{_datadir}/xfce4/AUTHORS
-%{_datadir}/xfce4/INFO
-%lang(ca) %{_datadir}/xfce4/INFO.ca
-%lang(de) %{_datadir}/xfce4/INFO.de
-%lang(es) %{_datadir}/xfce4/INFO.es
-%lang(fi) %{_datadir}/xfce4/INFO.fi
-%lang(fr) %{_datadir}/xfce4/INFO.fr
-%lang(it) %{_datadir}/xfce4/INFO.it
-%lang(ja) %{_datadir}/xfce4/INFO.ja
-%lang(ru) %{_datadir}/xfce4/INFO.ru
-%lang(uk) %{_datadir}/xfce4/INFO.uk
-%lang(vi) %{_datadir}/xfce4/INFO.vi
-%{_datadir}/xfce4/COPYING
-%{_datadir}/xfce4/BSD
-%{_datadir}/xfce4/LGPL
-%{_datadir}/xfce4/GPL
+#%{_datadir}/xfce4/AUTHORS
+#%{_datadir}/xfce4/INFO
+#%lang(ca) %{_datadir}/xfce4/INFO.ca
+#%lang(de) %{_datadir}/xfce4/INFO.de
+#%lang(es) %{_datadir}/xfce4/INFO.es
+#%lang(fi) %{_datadir}/xfce4/INFO.fi
+#%lang(fr) %{_datadir}/xfce4/INFO.fr
+#%lang(it) %{_datadir}/xfce4/INFO.it
+#%lang(ja) %{_datadir}/xfce4/INFO.ja
+#%lang(ru) %{_datadir}/xfce4/INFO.ru
+#%lang(uk) %{_datadir}/xfce4/INFO.uk
+#%lang(vi) %{_datadir}/xfce4/INFO.vi
+#%{_datadir}/xfce4/COPYING
+#%{_datadir}/xfce4/BSD
+#%{_datadir}/xfce4/LGPL
+#%{_datadir}/xfce4/GPL
 
-%{_datadir}/xfce4/doc/xfce*.css
-%{_datadir}/xfce4/doc/xfce-mouse.png
-%{_datadir}/xfce4/doc/C/*.html
-%{_datadir}/xfce4/doc/C/images/*.jpg
-%{_datadir}/xfce4/doc/C/images/*.png
-%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
-%lang(it) %{_datadir}/xfce4/doc/it/*.html
-
+#%docdir %{_datadir}/xfce4/doc
+#%{_datadir}/xfce4/doc/xfce*.css
+#%{_datadir}/xfce4/doc/xfce-mouse.png
+#%{_datadir}/xfce4/doc/C/*
+#%lang(fr) %{_datadir}/xfce4/doc/fr/*
+#%lang(it) %{_datadir}/xfce4/doc/it/*
 %{_iconsdir}/hicolor/*/*/*
 
+%{_desktopdir}/xfce4-about.desktop
+%{_desktopdir}/xfhelp4.desktop
+%{_desktopdir}/xfrun4.desktop
 %{_datadir}/xsessions/xfce4.desktop
