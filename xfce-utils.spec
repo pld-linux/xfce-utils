@@ -1,15 +1,14 @@
 Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Narzędzia dla środowiska Xfce
 Name:		xfce-utils
-Version:	4.6.1
-Release:	2
+Version:	4.6.2
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	1aa2362b11e79e56d52ce0d265faf1b6
+# Source0-md5:	5d23407700d7e8c9751e17a5bc955109
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-gxmessage.patch
-Patch1:		%{name}-am.patch
 URL:		http://www.xfce.org/projects/xfce-utils/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -41,7 +40,6 @@ xfce-utils zawiera narzędzia dla środowiska Xfce.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__intltoolize}
