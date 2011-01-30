@@ -15,6 +15,7 @@ BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
+BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
@@ -48,7 +49,7 @@ xfce-utils zawiera narzędzia dla środowiska Xfce.
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure 
+%configure
 %{__make}
 
 %install
