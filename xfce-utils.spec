@@ -1,31 +1,32 @@
 Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Narzędzia dla środowiska Xfce
 Name:		xfce-utils
-Version:	4.7.1
+Version:	4.8.0
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce/4.8pre1/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	3311e57ea7376ba7913a8676a37d2932
+Source0:	http://archive.xfce.org/xfce/4.8/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	c49af3e718048d70b3fdd45fd4a8d281
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-gxmessage.patch
-URL:		http://www.xfce.org/projects/xfce-utils/
+URL:		http://www.xfce.org/projects/xfce-utils
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	libtool
-#BuildRequires:	libxfce4ui-devel >= %{version}
-BuildRequires:	libxfce4ui-devel >= 4.7.0
+BuildRequires:	libxfce4ui-devel >= %{version}
+BuildRequires:	libxfce4util-devel >= %{version}
+BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
-BuildRequires:	xfce4-dev-tools >= 4.6.0
-Requires(post,postun):	gtk+2
-Requires(post,postun):	hicolor-icon-theme
+BuildRequires:	xfce4-dev-tools >= 4.8.0
+Requires(post,postun):	gtk-update-icon-cache
 Requires:	gxmessage
-#Requires:	libxfce4ui >= %{version}
-Requires:	libxfce4ui >= 4.7.0
+Requires:	hicolor-icon-theme
+Requires:	libxfce4ui >= %{version}
+Requires:	perl-XML-Parser
 Requires:	which
 Requires:	xfce4-dirs >= 4.6
 Requires:	xlockmore
@@ -50,7 +51,9 @@ xfce-utils zawiera narzędzia dla środowiska Xfce.
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure 
+%configure \
+	--disable-silent-rules
+
 %{__make}
 
 %install
@@ -60,13 +63,11 @@ install -d $RPM_BUILD_ROOT%{_datadir}/xsessions
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/X11/{dm,gdm,wmsession.d}
-rm -f $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce.desktop
-
-# switchdesk provides Xclients.Xfce4
-rm -rf $RPM_BUILD_ROOT%{_datadir}/apps
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce.desktop
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/xfce4.desktop
+
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
 
 %find_lang %{name}
 
@@ -89,29 +90,17 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/Xft.xrdb
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/xfce4/xinitrc
 %{_datadir}/dbus-1/services/*.service
-#%{_datadir}/xfce4/AUTHORS
-#%{_datadir}/xfce4/INFO
-#%lang(ca) %{_datadir}/xfce4/INFO.ca
-#%lang(de) %{_datadir}/xfce4/INFO.de
-#%lang(es) %{_datadir}/xfce4/INFO.es
-#%lang(fi) %{_datadir}/xfce4/INFO.fi
-#%lang(fr) %{_datadir}/xfce4/INFO.fr
-#%lang(it) %{_datadir}/xfce4/INFO.it
-#%lang(ja) %{_datadir}/xfce4/INFO.ja
-#%lang(ru) %{_datadir}/xfce4/INFO.ru
-#%lang(uk) %{_datadir}/xfce4/INFO.uk
-#%lang(vi) %{_datadir}/xfce4/INFO.vi
-#%{_datadir}/xfce4/COPYING
-#%{_datadir}/xfce4/BSD
-#%{_datadir}/xfce4/LGPL
-#%{_datadir}/xfce4/GPL
-
-#%docdir %{_datadir}/xfce4/doc
-#%{_datadir}/xfce4/doc/xfce*.css
-#%{_datadir}/xfce4/doc/xfce-mouse.png
-#%{_datadir}/xfce4/doc/C/*
-#%lang(fr) %{_datadir}/xfce4/doc/fr/*
-#%lang(it) %{_datadir}/xfce4/doc/it/*
+%dir %{_docdir}/xfce-utils
+%dir %{_docdir}/xfce-utils/html
+%{_docdir}/xfce-utils/html/C
+%{_docdir}/xfce-utils/html/*.css
+%lang(da) %{_docdir}/xfce-utils/html/da
+%lang(el) %{_docdir}/xfce-utils/html/el
+%lang(gl) %{_docdir}/xfce-utils/html/gl
+%lang(it) %{_docdir}/xfce-utils/html/it
+%lang(ja) %{_docdir}/xfce-utils/html/ja
+%lang(sv) %{_docdir}/xfce-utils/html/sv
+%lang(ug) %{_docdir}/xfce-utils/html/ug
 %{_iconsdir}/hicolor/*/*/*
 
 %{_desktopdir}/xfce4-about.desktop
