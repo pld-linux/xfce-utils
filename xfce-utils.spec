@@ -1,12 +1,12 @@
 Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Narzędzia dla środowiska Xfce
 Name:		xfce-utils
-Version:	4.8.0
-Release:	0.1
+Version:	4.8.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/xfce/4.8/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	c49af3e718048d70b3fdd45fd4a8d281
+Source0:	http://archive.xfce.org/src/xfce/xfce-utils/4.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	e39866365a45f7a1e7284b93eb4f92f0
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-gxmessage.patch
 URL:		http://www.xfce.org/projects/xfce-utils
@@ -16,21 +16,23 @@ BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	libtool
-BuildRequires:	libxfce4ui-devel >= %{version}
-BuildRequires:	libxfce4util-devel >= %{version}
-BuildRequires:	libxfcegui4-devel >= %{version}
+BuildRequires:	libxfce4ui-devel >= 4.8.0
+BuildRequires:	libxfce4util-devel >= 4.8.0
+BuildRequires:	libxfcegui4-devel >= 4.8.0
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	xfce4-dev-tools >= 4.8.0
-Requires(post,postun):	gtk-update-icon-cache
+Requires:	gtk-update-icon-cache
 Requires:	gxmessage
 Requires:	hicolor-icon-theme
-Requires:	libxfce4ui >= %{version}
+Requires:	libxfce4ui >= 4.8.0
 Requires:	perl-XML-Parser
 Requires:	which
 Requires:	xfce4-dirs >= 4.6
 Requires:	xlockmore
 Requires:	xorg-app-xrdb
+Requires:	xorg-app-xinit
+Requires:	xorg-app-xsetroot
 Conflicts:	xfce4-session < 0.1.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
