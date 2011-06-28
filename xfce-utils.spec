@@ -1,12 +1,12 @@
 Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Narzędzia dla środowiska Xfce
 Name:		xfce-utils
-Version:	4.8.1
-Release:	3
+Version:	4.8.2
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/xfce/xfce-utils/4.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	e39866365a45f7a1e7284b93eb4f92f0
+# Source0-md5:	7f48198f4bee3edf7869064c2922c609
 Source1:	xfce4-xsession.desktop
 Patch0:		%{name}-gxmessage.patch
 URL:		http://www.xfce.org/projects/xfce-utils
@@ -102,7 +102,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(it) %{_docdir}/xfce-utils/html/it
 %lang(ja) %{_docdir}/xfce-utils/html/ja
 %lang(sv) %{_docdir}/xfce-utils/html/sv
+%lang(tr) %{_docdir}/xfce-utils/html/tr
 %lang(ug) %{_docdir}/xfce-utils/html/ug
+%lang(zh_CN) %{_docdir}/xfce-utils/html/zh_CN
+
 %{_iconsdir}/hicolor/*/*/*
 
 %{_desktopdir}/xfce4-about.desktop
