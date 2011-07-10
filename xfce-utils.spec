@@ -2,7 +2,7 @@ Summary:	Utilities for the Xfce Desktop Environment
 Summary(pl.UTF-8):	Narzędzia dla środowiska Xfce
 Name:		xfce-utils
 Version:	4.8.2
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/xfce/xfce-utils/4.8/%{name}-%{version}.tar.bz2
@@ -29,10 +29,11 @@ Requires:	libxfce4ui >= 4.8.0
 Requires:	perl-XML-Parser
 Requires:	which
 Requires:	xfce4-dirs >= 4.6
-Requires:	xscreensaver >= 5.13
-Requires:	xorg-app-xrdb
 Requires:	xorg-app-xinit
+Requires:	xorg-app-xrdb
 Requires:	xorg-app-xsetroot
+Requires:	xscreensaver >= 5.13
+Suggests:	xorg-app-xinput
 Conflicts:	xfce4-session < 0.1.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
