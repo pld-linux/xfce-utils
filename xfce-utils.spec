@@ -13,7 +13,7 @@ URL:		http://www.xfce.org/projects/xfce-utils
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.62
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	intltool
 BuildRequires:	libtool
